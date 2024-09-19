@@ -7,9 +7,51 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        
+        int n = sc.nextInt();
+        int numOfI = n;
+        int numOfThat = n - 1;
+        int numOfHate = (int) Math.round(n / 2.0);
+        int numOfLove = n / 2;
 
+        String hate = "hate";
+        String love = "love";
+        String that = "that";
 
+        int count = 0;
+        int maxWords = 3 * n - 1;
+        while (count != maxWords) {
+            if(numOfI > 0) {
+                pw.print("I" + " ");
+                numOfI -= 1;
+                count++;
+            }
+            if(numOfHate > 0) {
+                pw.print(hate + " ");
+                numOfHate --;
+                count++;
+            }
+            if(numOfThat > 0) {
+                pw.print(that + " ");
+                numOfThat -= 1;
+                count++;
+            }
+            if(numOfI > 0) {
+                pw.print("I" + " ");
+                --numOfI;
+                count++;
+            }
+            if(numOfLove > 0) {
+                pw.print(love + " ");
+                numOfLove--;
+                count++;
+            }
+            if(numOfThat > 0) {
+                pw.print(that + " ");
+                numOfThat --;
+                count++;
+            }
+        }
+        pw.println("it");
 
 
         pw.close();
